@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Home - Global Irrigated Croplands</title>
+    <link rel="stylesheet" href="/assets/css/main.css" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Global Irrigated Croplands</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      
+      <a class="nav-item nav-link" href="/">Home</a>
+      
+      <a class="nav-item nav-link" href="/maps">Maps</a>
+      
+      <a class="nav-item nav-link" href="/research">Research</a>
+      
+      <a class="nav-item nav-link" href="/about">About</a>
+        
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    
+    <div class="container">
+    <div class="py-5 text-center">
+        <h2>Global Irrigation Maps</h2>
+        <p class="lead">Interactive, zoomable maps with Google Earth</p>
+    </div>
+</div>
+
+<p>On this page, you can explore the maps we produced.</p>
+
+<div class="alert alert-primary text-center mb-5" role="alert">
+    NOTE: Take some time to read the tips below, before you explore the maps.<br>
+    <img src="/assets/images/tips.png" class="img-fluid pt-3" width="100%">
+</div>
+
+<h3>Extent of Irrigated Croplands, 2000</h3>
+
+This map represents the output of our model for the year 2000.  As shown in the legend, green areas represent known
+irrigated farmlands.  The model also marks many new areas as irrigated: we have shown such areas in pink.  The
+intensity of color represents the confidence the model has about its detection.
+
+<div class="embed-responsive embed-responsive-4by3 mt-2 mb-5">
+    <iframe class="embed-responsive-item lazy" src="https://deepakna.users.earthengine.app/view/global-irrigated-croplands" allowfullscreen></iframe>
+</div>
+
+<h3>Extent of Irrigated Croplands, 2010</h3>
+
+This map represents the output of our model for the year 2010.  It uses a different model from the previous one, but it
+is more accurate.
+
+<div class="embed-responsive embed-responsive-4by3 mt-2 mb-5 collapsed">
+    <iframe class="embed-responsive-item lazy" src="https://brianneesby.users.earthengine.app/view/timeseries2015" allowfullscreen></iframe>
+</div>
+
+<h3>Change in Irrigation, 2000-18</h3>
+
+This map shows the difference in croplands between the years 2000 and 2018.  Newly irrigated areas are in red, and areas
+no longer irrigated are in green.  As before, the intensity of color represents the degree of change.
+
+<div class="embed-responsive embed-responsive-4by3 mt-2 mb-5">
+    <iframe class="embed-responsive-item lazy" src="https://deepakna.users.earthengine.app/view/global-irrigated-cropland-change" allowfullscreen></iframe>
+</div>
+
+<h3>Compare Irrigation</h3>
+
+This map uses a sliding pane.  You can select 2 years, one for the left and another for the right.  Then use the slider
+in the middle to see how the map changes for those years.
+
+<div class="embed-responsive embed-responsive-4by3 mt-2 mb-5">
+    <iframe class="embed-responsive-item lazy" src="https://deepakna.users.earthengine.app/view/comparing-irrigated-cropland-areas" allowfullscreen></iframe>
+</div>
+
+</div>
+<hr class="featurette-divider">
+
+<footer class="footer">
+    <div class="container text-center">
+        <span class="text-muted"><small>&copy; Global Irrigated Cropland team 2020. Website built by Deepak with Bootstrap and Jekyll.</small></span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<!-- lazy-load iframes -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"></script>
+</body>
+</html>

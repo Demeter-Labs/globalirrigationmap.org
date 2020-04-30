@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>{{ site.data.team.title }}</h2>
+        <p class="lead">{{ site.data.team.lead }}</p>
+    </div>
+
+    <div class="row">
+
+        {% for item in site.data.team.members %}
+        <div class="row col-md-3 mx-auto">
+            <img class="mx-auto img-fluid rounded-circle" width="256" src="{{ item.photo }}">
+            <div class="mx-auto text-center">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="py-5 text-center">
+        <h2>{{ site.data.advisors.title }}</h2>
+        <p class="lead">{{ site.data.advisors.lead }}</p>
+    </div>
+
+    <div class="row">
+
+        {% for item in site.data.advisors.members %}
+        <div class="row col-md-3 mx-auto">
+            <img class="mx-auto img-fluid rounded-circle" width="256" src="{{ item.photo }}">
+            <div class="mx-auto text-center">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>

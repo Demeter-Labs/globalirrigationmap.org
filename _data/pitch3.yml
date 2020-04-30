@@ -1,0 +1,4 @@
+heading: Technology can help.
+subheading: Satellite data and machine learning can provide us insights.
+pitch: We've used pictures taken from satellites and ground-level climate and soil data to detect irrigated croplands.  We've developed a machine learning model for this.
+image: assets/images/satellite.jpg

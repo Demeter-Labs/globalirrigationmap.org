@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Research - Global Irrigated Croplands</title>
+    <link rel="stylesheet" href="/assets/css/main.css" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Global Irrigated Croplands</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      
+      <a class="nav-item nav-link" href="/">Home</a>
+      
+      <a class="nav-item nav-link" href="/maps">Maps</a>
+      
+      <a class="nav-item nav-link" href="/research">Research</a>
+      
+      <a class="nav-item nav-link" href="/about">About</a>
+        
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+    <h1 id="detecting-worldwide-extent-of-cropland-irrigation">Detecting Worldwide Extent of Cropland Irrigation</h1>
+
+<h3 id="a-mids-capstone-project-uc-berkeley-school-of-information">A MIDS Capstone Project, UC Berkeley School of Information</h3>
+
+<p><em>Brian Neesby, Deepak Nagaraj, Eleanor Proust, Yeonjoo Jung</em></p>
+
+<h3 id="abstract">Abstract</h3>
+
+<p>Detecting the extent of irrigation in croplands is important for food security and water management.  Food and Agriculture Organization (FAO) maintains a dataset of cropland areas worldwide equipped for irrigation.  This dataset is derived from government and census records.  With the advent of satellite data and large-scale machine learning, we can validate and improve upon this knowledge.  In this project, we first build a machine learning model that can classify irrigated croplands.  We use the FAO dataset developed by Siebert et al. as labels to train our model; our features include satellite data, climate data and soil data.  We then classify land on all continents except Antarctica for every 3 years from 2000 to 2018, at a spatial resolution of 8 km.  To run such large-scale predictions, we use the machine learning and data catalog service provided by Google Earth Engine (GEE).  We have made our maps available for interactive exploration as GEE applications on a Web site dedicated to the project.  Our model has accuracy of 84% and a kappa value of 0.46.  Our model map shows many false positives; however, in many cases they are indeed croplands, which means government data is underreporting the true extent of irrigated croplands.  This is particularly true of China and India.</p>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+
+<p>The project team sincerely wishes to thank <a href="https://ourenvironment.berkeley.edu/people/paolo-dodorico">Prof. Paolo D’odorico</a>, and <a href="https://ourenvironment.berkeley.edu/people/lorenzo-rosa">Lorenzo Rosa</a>, both from the Department of Environmental Science, University of California at Berkeley, for their guidance in the project.  We also thank <a href="https://www.ischool.berkeley.edu/people/alberto-todeschini">Alberto Todeschini</a> and <a href="https://www.ischool.berkeley.edu/people/stanislav-kelman">Stanislav Kelman</a> from the School of Information, UC Berkeley, for the project idea and meaningful suggestions throughout our work.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>A major challenge in the 21st century is to feed a growing world population while in the middle of a warming climate trend.  Global agricultural production has to <a href="https://www.pnas.org/content/108/50/20260">double between 2005 and 2050</a> to meet our needs then.  Agriculture is the <a href="http://www.fao.org/3/a-i7959e.pdf">largest consumer of freshwater</a> globally at 70%, because food production is very water-intensive.  It is estimated that we need <a href="http://www.fao.org/3/a-i7959e.pdf">1 to 3 tons of water to grow 1 kilogram of cereal; beef needs 5 times more</a>.  Yet our use of water is inefficient and unsustainable.  Underground <a href="https://www.earth-syst-dynam.net/5/15/2014/esd-5-15-2014.pdf">aquifers have depleted</a> due to overuse, <a href="https://pubs.giss.nasa.gov/abs/ma07110n.html">increased snowmelt</a> and <a href="https://royalsocietypublishing.org/doi/full/10.1098/rstb.2010.0152">drought due to climate change</a> has reduced water flows, and a lot of available water is wasted in <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007WR006200">inefficient techniques</a> such as sprinkler and flood irrigation.</p>
+
+<p>We should therefore manage our limited freshwater well so that we can continue to grow enough food to meet global demand.  Yet there is considerable uncertainty about the extent of irrigated croplands globally.  Many existing datasets rely on government records, which can be patchy or ignore sources of information: for example, minor or informal irrigated areas, or intensity of irrigation.  This uncertainty in available data means we cannot make good policy decisions on water usage or food-production planning, which can contribute to hunger and starvation especially in developing countries.</p>
+
+<p>With the advent of high-resolution satellite data and large-scale machine learning, we can overcome some of the limitations of existing records.  Indeed, our model uses only climate, soil and satellite data to provide an estimate of irrigated croplands globally.  It requires no expensive censuses or cooperation across government entities, and can be run on any year that has the relevant data.</p>
+
+<h3 id="our-product">Our Product</h3>
+
+<p>In this project, we have developed the following products.</p>
+
+<ul>
+  <li>Global <a href="https://code.earthengine.google.com/?asset=users/deepakna/w210_results">maps of irrigated croplands</a> at 8km resolution, for the years 2000, 2003, …, 2018, as predicted by our machine learning model</li>
+</ul>
+
+<p><img src="assets/images/report/irrigation2000.png" alt="Irrigated cropland map for 2000" /></p>
+
+<ul>
+  <li>A <a href="https://deepakna.users.earthengine.app/view/global-irrigated-croplands">model assessment app</a> for the year 2000</li>
+</ul>
+
+<p><img src="assets/images/report/assessment2000.png" alt="Model assessment for 2000" /></p>
+
+<ul>
+  <li>A <a href="https://deepakna.users.earthengine.app/view/comparing-irrigated-cropland-areas">sliding-pane comparison app</a> for any 2 years of prediction</li>
+</ul>
+
+<p><img src="assets/images/report/comparison.png" alt="Comparison across years" /></p>
+
+<ul>
+  <li>A time-series chart that shows changes and trend in irrigation over the predicted period of 2000-18</li>
+</ul>
+
+<p><img src="assets/images/report/trend.png" alt="Time series" /></p>
+
+<ul>
+  <li>An app that shows direction and <a href="https://deepakna.users.earthengine.app/view/global-irrigated-cropland-change">extent of change</a> in irrigation between 2000 and 2018</li>
+</ul>
+
+<p><img src="assets/images/report/irrchange.png" alt="Change across years" /></p>
+
+<ul>
+  <li>
+    <p>A <a href="http://www.globalirrigationmap.org/">website</a> dedicated to the project and its results</p>
+  </li>
+  <li>
+    <p>For available global label datasets, <a href="http://www.globalirrigationmap.org/view_MIRCA.html">maps</a> and <a href="http://www.globalirrigationmap.org/compare_labels.html">comparison</a></p>
+  </li>
+</ul>
+
+<h3 id="prior-research">Prior Research</h3>
+
+<p>We now mention other research that has aimed to build a database of irrigated croplands at global scale.  Portmann et al. developed a global database of irrigated croplands, <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GB003435">MIRCA2000</a>, based on government data at 5 arc minute (9.3km at equator) resolution.  Siebert et al. have a <a href="https://www.hydrol-earth-syst-sci.net/19/1521/2015/hess-19-1521-2015.html">time-series data</a> of irrigated croplands from 1900 to 2005.  Thenkabail et al. primarily use spectral methods on satellite data to produce a global cropland dataset at 1 km resolution, <a href="https://waterdata.iwmi.org/Applications/GIAM2000/">GIAM</a>, which they have enhanced recently to be at 30m resolution, as <a href="https://www.usgs.gov/centers/wgsc/science/global-food-security-support-analysis-data-30-m-gfsad?qt-science_center_objects=0#qt-science_center_objects">GFSAD30</a>.  Salmon et al. follow a similar approach as ours to produce a global cropland dataset at 500m resolution, <a href="http://www.gibbs-lab.com/wp-content/uploads/2015/09/Salmon_Global_rain_fed_irrigated_and_paddy_croplands_2015.pdf">GRIPC</a>.  Meier et al. validate Siebert dataset and extend it with ancillary data, <a href="https://www.hydrol-earth-syst-sci.net/22/1119/2018/hess-22-1119-2018.pdf">producing a map</a> at 30 arc seconds (1km at equator).</p>
+
+<h3 id="data-exploration">Data Exploration</h3>
+
+<p>In order to detect irrigated croplands, we explored the following datasets for features.  Satellite NDVI data can be used to detect vegetation; climatic features such as rainfall and pressure, as well as soil moisture data can hint at irrigation.</p>
+
+<h4 id="feature-datasets">Feature Datasets</h4>
+<p>| Dataset | Spatial resolution | Time resolution | Dataset availability | Features |
+|———|——————–|—————–|———————-|————–|
+| <a href="https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE">TERRACLIMATE</a> | 2.5 arc min = 4.6 km equator = 1.8 km polar circle | Monthly | 1958-present | Climate: precipitation, temperature, pressure |
+| MODIS Satellite <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13A2">MOD13A2</a>, <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD09GA">MOD09GA</a> | 1 km | 16-day average | 2000-present | Vegetation, water indices |
+| <a href="https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V021_NOAH_G025_T3H">NASA GLDAS</a> | 0.25 arc deg = 27.8 km equator = 10 km polar circle | 3-hourly | 2000-present | Soil moisture, evaporation |
+| <a href="https://developers.google.com/earth-engine/datasets/catalog/NASA_GRACE_MASS_GRIDS_LAND">NASA GRACE</a> | 1 arc deg = 111 km equator = 45 km polar circle | Monthly | 2002-2017 | Groundwater |</p>
+
+<h4 id="label-dataset">Label Dataset</h4>
+<p>| Dataset | Spatial resolution | Time resolution | Dataset availability | Details |
+|———|——————–|—————–|————-|———-|
+| <a href="https://code.earthengine.google.com/?asset=users/deepakna/mc4MaxIrrigatedHa">MIRCA2000</a> | 5 arc min = 9.3 km equator = 3.6 km polar circle |  Annual | 2000 | Labels: Maximum area equipped for irrigation, Hectares |</p>
+
+<p>All the feature datasets are available on Google Earth Engine.  We originally included all features in the datasets, before selecting the most important ones in our final model.  Because our label is a single value for the entire year, we took the maximum value over a year for satellite data, and the mean value for all other features.</p>
+
+<p>The labels are numerical values representing maximum area equipped for irrigation, in hectares.  This showed a highly skewed distribution.  We did a logarithmic transformation and converted the transformed labels into a binary category: we treated all values above 1 as “irrigated”, and not irrigated otherwise.</p>
+
+<p><img src="assets/images/report/histlabels.png" alt="Histogram of log-transformed labels" /></p>
+
+<p><img src="assets/images/report/labels.png" alt="Label distribution" /></p>
+
+<p>We also explored another label dataset: <a href="https://developers.google.com/earth-engine/datasets/catalog/USGS_GFSAD1000_V0">GFSAD1000</a>.  This was developed for 2010 and is at 1km resolution.  But in the end, we decided to use MIRCA2000 for our project as a source of comparison between pure government data versus data from climate, satellite and soil.</p>
+
+<h3 id="scale-and-scope">Scale and Scope</h3>
+
+<p>Our project aims to provide a global map of irrigated cropland.  Specifically, our model maps cover the following land masses:</p>
+
+<ul>
+  <li>North America</li>
+  <li>Central America and the Caribbean Islands</li>
+  <li>South America</li>
+  <li>Europe</li>
+  <li>Africa</li>
+  <li>North, Central and East Asia</li>
+  <li>South-west, South and South-east Asia</li>
+  <li>Australia</li>
+  <li>New Zealand and Papua New Guinea from Oceania</li>
+</ul>
+
+<p>Our maps are at a resolution of 8km, and are available separately for the years 2000, 2003, 2006, 2009, 2012, 2015 and 2018.</p>
+
+<p>We fit a single model on a global sample of data, i.e. we do not have separate models for regions or continents.  We do not use any land-cover masks, such as for deserts or forests.  Our model uses 9 features, selected from an original set of 53 features.</p>
+
+<p>Before the prediction could run, the features needed to be processed separately and collected as input.  At 8km and 3-hourly resolution, a GLDAS feature for a year is about 8800 million data points to be averaged, and we have 4 such features in our model.  MODIS satellite data is 72 million data points, and TERRACLIMATE data is 4 features with 36 million data points each.  Thus a total of about 35,000 million numeric data points, or about 140 GB of data, are processed to obtain features for a given year.  Altogether we processed about 990 GB of data to generate all the feature maps from 2000 through 2018.  We saved the features as multi-band GeoTIFF images.</p>
+
+<p>Once the features are available, a single prediction run for a year classifies 3.0 million rows that span the continents.  Each row contains 9 columns that correspond to our features, and latitude and longitude.  Assuming all of them are numerics at 4 bytes each, the total data size is about 130 MB per year.  For each row in this table, the model builds a random forest of 1000 trees.  A run on a single year takes 4 hours to finish on <a href="https://earthengine.google.com/">Google Earth Engine</a>, a service that uses data- and model-parallelism to provide large-scale machine learning.</p>
+
+<p>Model resolution is a key engineering decision in this project.  Going from 8km to 1km resolution increases the data 64 times.  This is because we are dealing with geographic areas.  In computing terminology, this is an <a href="https://en.wikipedia.org/wiki/Time_complexity#Polynomial_time">O(N<sup>2</sup>)</a> problem.  However, because each prediction is independent of the others, the data lend themselves to a form of parallelization called <a href="https://en.wikipedia.org/wiki/MapReduce">map-reduce</a>:  Google Earth Engine lets us partition the data into run computations on these smaller chunks (“map”), and then coalesce the results (“reduce”).  Programming to a map-reduce paradigm is harder and requires considerable forethought.  GEE also links complex data transformations together and starts the chain only when called to be output; this is known as <a href="https://en.wikipedia.org/wiki/Lazy_evaluation">lazy evaluation</a> and is seen in other big-data technologies as well, such as Apache Spark.</p>
+
+<h3 id="model-development">Model Development</h3>
+
+<p>We fit our model on a random sample of 5,000 points from all over the world.  For the feature datasets we introduced earlier, we obtained all features for these sample points, as well as labels.  We then downloaded this sample feature dataset for model development.  About 15% of the sample was irrigated cropland.</p>
+
+<p><img src="assets/images/report/sample10k.png" alt="Sample points for model development" /></p>
+
+<p>We used R, specifically the <a href="http://topepo.github.io/caret/index.html">caret</a> package, for model development.  Our choice of models was limited to what we could ultimately run on Google Earth Engine.  We tried <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a>, <a href="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">SVM with radial kernel</a>, and <a href="https://en.wikipedia.org/wiki/Random_forest">random forest</a>.  We evaluated them for area under ROC curve (<a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">AUC</a>); random forest was the winner.</p>
+
+<p><img src="assets/images/report/roccurve.png" alt="ROC Curves" /></p>
+
+<p>Random forest also gave us insight into the most important features.  We added the most important features one by one until we obtained a model that was within one standard error of our evaluation metric.</p>
+
+<p><img src="assets/images/report/featimp.png" alt="Feature importance" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Feature</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GLDAS</td>
+      <td><a href="https://en.wikipedia.org/wiki/Transpiration">Transpiration</a></td>
+      <td>Evaporation from leaves</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td><a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a></td>
+      <td>A proxy for latitude-specific features, such as amount of sunlight and prevailing winds</td>
+    </tr>
+    <tr>
+      <td>TERRACLIMATE</td>
+      <td>Minimum temperature</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TERRACLIMATE</td>
+      <td><a href="https://en.wikipedia.org/wiki/Vapour-pressure_deficit">Vapor pressure deficit</a></td>
+      <td>High deficit indicates lower chance of rain</td>
+    </tr>
+    <tr>
+      <td>TERRACLIMATE</td>
+      <td><a href="https://en.wikipedia.org/wiki/Vapor_pressure">Vapor pressure</a></td>
+      <td>A measure of how much moisture exists in the air</td>
+    </tr>
+    <tr>
+      <td>GLDAS</td>
+      <td>Root zone soil moisture</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td><a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a></td>
+      <td>A proxy for longitude-specific features, such as north-south coast lines, mountain chains or ocean currents</td>
+    </tr>
+    <tr>
+      <td>GLDAS</td>
+      <td><a href="https://en.wikipedia.org/wiki/Albedo">Albedo</a></td>
+      <td>Fraction of sunlight reflected back to space: water reflects less than land</td>
+    </tr>
+    <tr>
+      <td>MODIS</td>
+      <td><a href="https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index">NDVI</a></td>
+      <td>A number derived from light reflected in near infra-red and red spectrum, as seen by satellite and indicative of vegetation</td>
+    </tr>
+    <tr>
+      <td>GLDAS</td>
+      <td>Bare soil evaporation</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TERRACLIMATE</td>
+      <td>Wind speed</td>
+      <td>Wind can hasten evaporation, or bring clouds</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We split our training sample 90:10 for training and test set.  We used <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)#k-fold_cross-validation">5-fold cross-validation</a> on training set during model development.  We ran the final model on the held out test set.  On this set the model showed accuracy of 0.90 and kappa score of 0.50.</p>
+
+<p>Once we finalized our model in R, we invoked the same model on Google Earth Engine with the same hyperparameters.  With a tuning length of 10 on caret package, our tuned hyperparameters were:</p>
+
+<ul>
+  <li>number of trees: 1000</li>
+  <li>variables per split: 7</li>
+  <li>bagging fraction: 0.63</li>
+  <li>probability threshold: 0.15</li>
+</ul>
+
+<h3 id="model-assessment">Model Assessment</h3>
+
+<p>When we classified all the 2000 data with the model, we obtained the <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a> below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>↓ Classified Actual →</th>
+      <th>Actual Irrigated</th>
+      <th>Actual Not-irrigated</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Predicted Irrigated</td>
+      <td>266606</td>
+      <td>408550</td>
+      <td>675156</td>
+    </tr>
+    <tr>
+      <td>Predicted Not-irrigated</td>
+      <td>46199</td>
+      <td>2194922</td>
+      <td>2241121</td>
+    </tr>
+    <tr>
+      <td>TOTAL</td>
+      <td>312805</td>
+      <td>2603472</td>
+      <td>2916277</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Additional evaluation metrics:</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Kappa</a>: 0.46</li>
+  <li><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>: 0.40</li>
+  <li><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>: 0.85</li>
+  <li><a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">Accuracy</a>: 0.84</li>
+</ul>
+
+<p>From the confusion matrix, we can see that the model shows a large number of false positives.  We explored some of them on a satellite map and they do show cropland areas.  We believe that the labels obtained from government data understates true extent of irrigated croplands.</p>
+
+<p>As example, we show below a region in Russia, south-east of Moscow, which is not marked as irrigated in the labels, but clearly shows croplands in satellite imagery.  We colored false-positives pink, so it has a reddish tinge.</p>
+
+<p><img src="assets/images/report/falsepos.png" alt="False positives in Russia" /></p>
+
+<p><img src="assets/images/report/falsepos2.png" alt="False positive closeup shows croplands" /></p>
+
+<p>The model also detects pivot irrigation in deserts, such as the circles we see below in Arabia.  Notice the green tinge color we’ve used that indicates “true positive”.</p>
+
+<p><img src="assets/images/report/truepos1.png" alt="True positive in Arabia" /></p>
+
+<p>Two more examples follow where the model predicts cropland and the label does not, but satellite clearly shows croplands, validating the model:</p>
+
+<p>Bihar, East India:
+<img src="assets/images/report/falsepos3.png" alt="Bihar, East India" /></p>
+
+<p>Near Suzhou, East China:
+<img src="assets/images/report/falsepos4.png" alt="Near Suzhou, East China" /></p>
+
+<h3 id="results">Results</h3>
+
+<p>For the year 2000 data, the model predicts that 23% of the land is irrigated.  This is almost double what is stated in the (binary) labels: 11%.  A lot of it is a weakness in the model itself, but as we show earlier, there is underreporting in government records as well.  An earlier model by Thenkabail et al. that used satellite data also showed 40% more irrigated croplands than stated in the records, corroborating our work to some extent.</p>
+
+<p><img src="assets/images/report/trend.png" alt="Trend in irrigation" /></p>
+
+<p>A second use case for the model was to see patterns over time.  From the model predictions over the years between 2000 and 2018, we can also see trends in irrigation.  We see a clear trend line of increase.  Between the years 2000 and 2018, the number of 8km x 8km squares marked irrigated went up by 12% worldwide.  Only one year, 2009, shows a marked drop in irrigation, which could perhaps be due to an economic recession around that time.  It quickly rebounds, however.</p>
+
+<h3 id="limitations-and-future-plans">Limitations and Future Plans</h3>
+
+<p>There are a few limitations in the model worth mentioning here.  Forecasting many years into the future with a single training period is risky, when the features themselves have trends: for example, minimum temperature, a feature in our model, has an increasing trend in our current period of global warming.  8km resolution is probably too coarse for smaller croplands.  We may be able to model better with measures of dispersion in our features rather than measures of centrality: overall, there is a lot of scope to do better in feature engineering.  A sample of 5,000 points may not be enough to obtain all the variance in data when the class imbalance is high; it is worth modelling on a larger sample, or exploring methods to synthesize data such as <a href="https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis#SMOTE">SMOTE</a>.</p>
+
+<p>Resolution continues to be an engineering challenge.  Every increase in resolution will need experimentation in the new task size so that Google Earth Engine can cope with the quadratic increase in data.  It is probably prudent to increase it in steps, instead of going all the way high.</p>
+
+
+    </div>
+    <hr class="featurette-divider">
+
+<footer class="footer">
+    <div class="container text-center">
+        <span class="text-muted"><small>&copy; Global Irrigated Cropland team 2020. Website built by Deepak with Bootstrap and Jekyll.</small></span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

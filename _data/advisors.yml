@@ -1,0 +1,15 @@
+title: Our Advisors
+lead: This project was a collaboration between the Department of Environmental Sciences and School of Information, UC Berkeley
+members:
+  - name: Paolo<br>D'Odorico
+    bio: Professor, Dept. of Env. Science, UC Berkeley
+    photo: assets/images/paolo.jpg
+  - name: Alberto<br>Todeschini
+    bio: Lecturer, School of Information, UC Berkeley
+    photo: assets/images/alberto.png
+  - name: Stanislav<br>Kelman
+    bio: Lecturer, School of Information, UC Berkeley
+    photo: assets/images/stan.png
+  - name: Lorenzo<br>Rosa
+    bio: Ph.D. candidate, UC Berkeley
+    photo: assets/images/lorenzo.png

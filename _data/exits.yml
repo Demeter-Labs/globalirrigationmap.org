@@ -1,0 +1,15 @@
+maps:
+  blurb: Explore our maps
+  button: The Maps
+  icon: /assets/icons/map.svg
+  link: /maps
+research:
+  blurb: How we built our product
+  button: Research
+  icon: /assets/icons/research.svg
+  link: /research
+about:
+  blurb: See the faces behind it
+  button: About Us
+  icon: /assets/icons/team.svg
+  link: /about

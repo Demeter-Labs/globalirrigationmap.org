@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" crossorigin="anonymous">
+  </head>
+  <body>
+    {% include navbar.html %}
+    {% include carousel.html %}
+    {% include heading.html %}
+    {% include whatwhyhow.html %}
+    {% include pitches.html %}
+    {{ content }}
+    {% include exits.html %}
+    {% include footer.html %}
+  </body>
+</html>

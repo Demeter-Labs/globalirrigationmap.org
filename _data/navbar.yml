@@ -1,0 +1,8 @@
+- name: Home
+  link: /
+- name: Maps
+  link: /maps
+- name: Research
+  link: /research
+- name: About
+  link: /about

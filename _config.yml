@@ -1,0 +1,10 @@
+url: "http://globalirrigationmap.org" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+title: Global Irrigated Croplands
+markdown: kramdown
+kramdown:
+  input: GFM #Github Flavored Markdown
+  hard_wrap: false
+  syntax_highlighter: rouge
+sass:
+  sass_dir: assets/css

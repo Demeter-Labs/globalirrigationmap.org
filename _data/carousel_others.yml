@@ -1,0 +1,20 @@
+- heading: Interactive and zoomable
+  subheading: You can zoom in to any region of interest
+  image:
+    src: assets/images/closeup.png
+    alt: Close-up
+- heading: Farming in Arabia
+  subheading: Model detected pivot irrigation in the middle of desert
+  image:
+    src: assets/images/pivot.png
+    alt: Pivot irrigation
+- heading: Irrigation in sub-Saharan Africa
+  subheading: This is a patch of green in Sudan
+  image:
+    src: assets/images/africa.png
+    alt: Sub-Saharan Africa
+- heading: Irrigated farmland in Europe
+  subheading: Note the irrigation canal in the middle
+  image:
+    src: assets/images/holland.png
+    alt: Holland, Europe

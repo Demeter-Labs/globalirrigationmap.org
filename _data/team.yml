@@ -1,0 +1,15 @@
+title: The Team
+lead: We are a team of graduate students from School of Information, University of California at Berkeley
+members:
+  - name: Deepak<br>Nagaraj
+    bio: ML Engineer<br>Citrix
+    photo: assets/images/deepak.png
+  - name: Eleanor<br>Proust
+    bio: Data Scientist<br>ANZ
+    photo: assets/images/elle.png
+  - name: Brian<br>Neesby
+    bio: CIO<br>N.C. Board of Elections
+    photo: assets/images/brian.png
+  - name: Yeonjoo<br>Jung
+    bio: Analytics Lead<br>Koch
+    photo: assets/images/yeonjoo.png
