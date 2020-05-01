@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" crossorigin="anonymous">
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div class="container">
+      <div class="alert alert-primary text-center mt-5 mb-5" role="alert">
+        NOTE: This is a technical report. We're working on making a more accessible Web page.
+      </div>
+    {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
