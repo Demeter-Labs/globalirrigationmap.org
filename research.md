@@ -109,7 +109,13 @@ The labels are numerical values representing maximum area equipped for irrigatio
 <br>
 We also explored another label dataset: [GFSAD1000](https://developers.google.com/earth-engine/datasets/catalog/USGS_GFSAD1000_V0).  This was developed for 2010 and is at 1km resolution.  But in the end, we decided to use MIRCA2000 for our project as a source of comparison between pure government data versus data from climate, satellite and soil.
 
-<hr class="mt-5 mb-5">
+We have developed an app to compare the labels visually:
+
+<div class="embed-responsive embed-responsive-4by3 mt-2">
+    <iframe class="embed-responsive-item lazy" src="https://brianneesby.users.earthengine.app/view/comparelabeleddata" allowfullscreen></iframe>
+</div>
+
+<hr class="mt-2 mb-5">
 
 ### Model Development
 
