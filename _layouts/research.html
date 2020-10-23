@@ -10,10 +10,11 @@
   <body>
     {% include navbar.html %}
     <div class="container">
+      {% include newver.html %}
       <div class="alert alert-primary text-center mt-5 mb-5" role="alert">
         NOTE: This is a technical report. We're working on making a more accessible Web page.
       </div>
-    {{ content }}
+      {{ content }}
     </div>
     {% include footer.html %}
   </body>
